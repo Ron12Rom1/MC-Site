@@ -38,8 +38,10 @@ def admin_panel():
         action = request.form.get('action')
         if action == 'Turn Server On':
             server_status = True
+            print("Server turned on")
         elif action == 'Turn Server Off':
             server_status = False
+            print("Server turned off")
         return redirect('/admin')
 
 def main():

@@ -15,6 +15,13 @@ body {
     background-repeat: no-repeat; */
 
 }
+.status-online {
+    color: green;
+}
+
+.status-offline {
+    color: red;
+}
 #main_container{
     /* border: 2px solid green; */
 
