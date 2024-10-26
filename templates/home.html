@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>MC Server</title>
+{% endblock %}
+
+
+{% block style %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/home.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+
+<div id="main_container">
+
+    <img id="arrow_pic" src="static\Images\scroll_arrow.png" alt="logo">
+
+    <div id="main-panel">
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Admin Panel</title>
+{% endblock %}
+
+
+{% block style %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/admin.css') }}">
+
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>Admin Panel</h1>
+
+    <form action="{{ url_for('admin_panel') }}" method="POST">
+        <button type="submit" name="action" value="Turn Server On">Turn Server On</button>
+        <button type="submit" name="action" value="Turn Server Off">Turn Server Off</button>
+    </form>
+
+{% endblock %}
