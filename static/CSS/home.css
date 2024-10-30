@@ -1,8 +1,9 @@
 body {
+    background-color: #f0f0f0;
+    
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #c6c6c6;
 
     display: flex;
     align-items: center;

@@ -1,17 +1,17 @@
 #main-van-container {
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: calc(50% - (100px / 2));
+    top: 50%;
     
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    transform: translateX(-75px);
+    transform: translateX(-75px) translateY(-50%);
     transition: transform 100ms ease-in-out;
 }
 #main-van-container:hover {
-    transform: translateX(0);
+    transform: translateX(0) translateY(-50%);
 }
 #trans-block {
     width: 15px;

@@ -10,12 +10,13 @@
 
 {% block body %}
 
-<h1 id="title" >Admin Panel</h1>
+<h1 id="title">Admin Panel</h1>
 <div id="main">
 
     <div class="section" id="status_container">
-        <p id="status" >Current Server Status: {{ server_status }}</p>
-        <form id="status-form"action="{{ url_for('admin_panel') }}" method="POST">
+        <h2 id="server_status_title">Server Status</h2>
+        <p id="status">Current Server Status: {{ server_status }}</p>
+        <form id="status-form" action="{{ url_for('admin_panel') }}" method="POST">
             <div id="on-or-off-btns">
                 <button id="btn" type="submit" name="action" value="Turn Server On">Turn Server On</button>
                 <button id="btn" type="submit" name="action" value="Turn Server Off">Turn Server Off</button>
@@ -25,6 +26,24 @@
                 <button id="custom-message-btn" type="submit" name="action" value="Make custom message">Make custom message</button>
             </div>
         </form>
+    </div>
+
+    <div class="section" id="admin_users">
+        <h2 id="admin_users_list_title">Admin Users</h2>
+        <ul id="admin_users_ul">
+            <p id="admin_users_mini-title" style="margin-top: 0px;">Users:</p>
+            <div id="admin_users_li_div">
+                {% for name in admin_users_list %}
+                    <li><a class="admin_users_list_item" href="{{ url_for('profile', user=name) }}">{{ name }}</a></li>
+                {% endfor %}
+            </div>
+        </ul>
+        <div id="add-user-container">
+            <form action="{{ url_for('add_user') }}" method="POST">
+                <input id="add-user-input-text" type="text" name="username" placeholder="Enter username">
+                <button id="add-user-btn" type="submit">Add User</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(0, 0, 0, 0.405);
+    background-color: #00000067;
 
     display: flex;
     flex-direction: column;
@@ -52,7 +52,23 @@ body {
 
     margin: 25px;
 }
-#on-or-off-btns {
+#server_status_title, #admin_users_list_title {
+    margin-bottom: 0;
+}
+#admin_users_mini-title {
+    left: auto;
+}
+#admin_users_li_div {
+    margin-left: 50px;
+}
+.admin_users_list_item {
+    font-weight: bold;
+    color: white;
+}
+#admin_users_ul {
+    width: 100%;
+}
+#on-or-off-btns, #custom-message-div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -109,4 +125,25 @@ button {
 
     gap: 5px;
 }
+#add-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    gap: 5px;
+}
+#add-user-input-text {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    padding: 5px;
+}
+#add-user-btn {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    padding: 5px;
+}
