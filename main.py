@@ -10,6 +10,10 @@ admin_users_list = {'Ron12Rom1': '12345'}
 # Global server status
 server_status = 'Offline'
 
+@app.route("/")
+def root():
+    return redirect('/Home')
+
 @app.route("/Home", methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
