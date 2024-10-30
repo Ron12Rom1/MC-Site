@@ -8,7 +8,7 @@ app.secret_key = os.urandom(24)
 admin_users_list = {'Ron12Rom1': '12345'}
 
 # Global server status
-server_status = 'Offline'
+server_status = 'Unknown'
 
 @app.route("/")
 def root():
@@ -19,11 +19,12 @@ def index():
     if request.method == 'GET':
         return render_template('home.html', status=server_status)
 
-@app.route("/ron12rom1")
-def main():
-    return "Welcome Ron12Rom1"
+@app.route("/logout", methods=['GET', 'POST'])
+def logout():
+    session.pop('username', None)
+    return redirect('/Home')
 
-@app.route("/admin/login", methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     login_failed = False
     if request.method == 'GET':
@@ -45,7 +46,7 @@ def login():
 def admin_panel():
     global server_status  # Declare server_status as global to modify it
     if 'username' not in session:
-        return redirect('/admin/login')
+        return redirect('/login')
 
     if request.method == 'GET':
         return render_template('admin.html', server_status=server_status, admin_users_list=admin_users_list.keys())
@@ -68,7 +69,7 @@ def admin_panel():
 @app.route("/profile/<user>", methods=['GET', 'POST'])
 def profile(user):
     if 'username' not in session:
-        return redirect('/admin/login')
+        return redirect('/login')
     if request.method == 'POST':
         if request.form.get(f'delete_{user}') == 'Delete User':
             print(f"Delete User pressed: {user}")
@@ -80,14 +81,14 @@ def profile(user):
 @app.route("/delete/<user>", methods=['GET', 'POST'])
 def delete_user(user):
     if 'username' not in session:
-        return redirect('/admin/login')
+        return redirect('/login')
     admin_users_list.pop(user)
     return redirect('/admin')
 
 @app.route("/add_user", methods=['GET', 'POST'])
 def add_user():
     if 'username' not in session:
-        return redirect('/admin/login')
+        return redirect('/login')
     if request.method == 'POST':
         username = request.form.get('username')
         admin_users_list[username] = "N/A"
@@ -95,5 +96,6 @@ def add_user():
         return redirect(request.referrer)
 
 
+
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get('PORT', 6969)))
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
