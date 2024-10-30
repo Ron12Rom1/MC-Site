@@ -1,45 +1,112 @@
 body {
-    background-color: #333;
-    color: #fff;
-    transition: background-color 1s ease-in-out;
-}
+    background-color: rgba(0, 0, 0, 0.405);
 
-h1 {
-    text-align: center;
-    transition: transform 1s ease-in-out;
-}
-
-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: opacity 1s ease-in-out;
-}
+    font-family: sans-serif;
 
-button {
-    background-color: #4CAF50;
+    margin: 40px;
+    min-width: 400px;
+    
+}
+#title {
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#main {
+    background-color: rgb(58, 58, 58);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px;
+
+    width: 400px;
+    min-width: 400px;
+
+    margin-top: 50px;
+    padding: 50px;
+}
+.section {
+    background-color: rgb(91, 91, 91);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    border-radius: 10px;
+
+    width: 90%;
+    min-width: 360px;
+
+    padding: 15px 0;
+
+    margin: 25px;
+}
+#on-or-off-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+#btn {
+    background-color: rgb(58, 58, 58);
+    color: white;
+
+
+    border: 2px solid rgb(58, 58, 58);
+
+    border-radius: 5px;
+
+    padding: 10px 20px;
+
+}
+#custom-message-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 10px;
+
+    text-align: center;
+}
+#custom-message-input {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    padding: 5px;
+}
+#custom-message-btn {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    border: 2px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    padding: 5px;
+}
+input {
     cursor: pointer;
-    transition: background-color 1s ease-in-out, transform 1s ease-in-out;
 }
-
-button:hover {
-    opacity: 0.8;
-    transform: scale(1.2) rotate(5deg);
+button {
+    cursor: pointer;
 }
+#status-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-body:hover {
-    background-color: #444;
-}
-
-h1:hover {
-    transform: scale(1.2) rotate(5deg);
-}
-
-form:hover {
-    opacity: 0.9;
+    gap: 5px;
 }
 

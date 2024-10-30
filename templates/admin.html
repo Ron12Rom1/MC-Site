@@ -9,11 +9,22 @@
 {% endblock %}
 
 {% block body %}
-<h1>Admin Panel</h1>
-<p>Current Server Status: {{ 'Online' if server_status else 'Offline' }}</p>
 
-<form action="{{ url_for('admin_panel') }}" method="POST">
-    <button type="submit" name="action" value="Turn Server On">Turn Server On</button>
-    <button type="submit" name="action" value="Turn Server Off">Turn Server Off</button>
-</form>
+<h1 id="title" >Admin Panel</h1>
+<div id="main">
+
+    <div class="section" id="status_container">
+        <p id="status" >Current Server Status: {{ server_status }}</p>
+        <form id="status-form"action="{{ url_for('admin_panel') }}" method="POST">
+            <div id="on-or-off-btns">
+                <button id="btn" type="submit" name="action" value="Turn Server On">Turn Server On</button>
+                <button id="btn" type="submit" name="action" value="Turn Server Off">Turn Server Off</button>
+            </div>
+            <div id="custom-message-div">
+                <input id="custom-message-input" type="text" name="message" placeholder="Enter custom message">
+                <button id="custom-message-btn" type="submit" name="action" value="Make custom message">Make custom message</button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

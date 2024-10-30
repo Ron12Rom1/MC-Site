@@ -15,11 +15,13 @@
 {% block body %}
 
 <h1>
-    Server 
-    {% if status %}
+    Server Status: 
+    {% if status == "Online" %}
         <span class="status-online", style="color: green;">Online</span>
-    {% else %}
+    {% elif status == "Offline" %}
         <span class="status-offline", style="color: red;">Offline</span>
+    {% else %}
+        <span class="status-message", style="color: Blue;">{{ status }}</span>
     {% endif %}
 </h1>
 
